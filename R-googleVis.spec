@@ -4,22 +4,20 @@
 #
 Name     : R-googleVis
 Version  : 0.6.3
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/googleVis_0.6.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/googleVis_0.6.3.tar.gz
 Summary  : R Interface to Google Charts
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-jsonlite
+Requires: R-markdown
 BuildRequires : R-jsonlite
+BuildRequires : R-markdown
 BuildRequires : buildreq-R
 
 %description
-to create interactive charts based on data frames. Charts
-    are displayed locally via the R HTTP help server. A modern
-    browser with an Internet connection is required and for some
-    charts a Flash player. The data remains local and is not
-    uploaded to Google.
+# googleVis
+[![Travis-CI Build Status](https://travis-ci.org/mages/googleVis.svg?branch=master)](https://travis-ci.org/mages/googleVis)   [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/googleVis)](https://cran.r-project.org/package=googleVis/) ![downloads](https://cranlogs.r-pkg.org/badges/grand-total/googleVis)
 
 %prep
 %setup -q -c -n googleVis
@@ -29,10 +27,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542079952
+export SOURCE_DATE_EPOCH=1552832570
 
 %install
-export SOURCE_DATE_EPOCH=1542079952
+export SOURCE_DATE_EPOCH=1552832570
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -68,8 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library googleVis|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  googleVis || :
 
 
 %files
