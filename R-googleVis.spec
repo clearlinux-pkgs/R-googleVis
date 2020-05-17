@@ -4,7 +4,7 @@
 #
 Name     : R-googleVis
 Version  : 0.6.4
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/googleVis_0.6.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/googleVis_0.6.4.tar.gz
 Summary  : R Interface to Google Charts
@@ -12,31 +12,33 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-jsonlite
 BuildRequires : R-jsonlite
-BuildRequires : R-markdown
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-# googleVis
-[![Travis-CI Build Status](https://travis-ci.org/mages/googleVis.svg?branch=master)](https://travis-ci.org/mages/googleVis)   [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/googleVis)](https://cran.r-project.org/package=googleVis) [![downloads](https://cranlogs.r-pkg.org/badges/grand-total/googleVis)](https://cran.r-project.org/package=googleVis)
+to create interactive charts based on data frames. Charts
+    are displayed locally via the R HTTP help server. A modern
+    browser with an Internet connection is required and for some
+    charts a Flash player. The data remains local and is not
+    uploaded to Google.
 
 %prep
 %setup -q -c -n googleVis
+cd %{_builddir}/googleVis
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571839798
+export SOURCE_DATE_EPOCH=1589758405
 
 %install
-export SOURCE_DATE_EPOCH=1571839798
+export SOURCE_DATE_EPOCH=1589758405
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
