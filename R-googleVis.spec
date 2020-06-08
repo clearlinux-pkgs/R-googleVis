@@ -4,7 +4,7 @@
 #
 Name     : R-googleVis
 Version  : 0.6.5
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/googleVis_0.6.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/googleVis_0.6.5.tar.gz
 Summary  : R Interface to Google Charts
@@ -30,10 +30,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591628882
+export SOURCE_DATE_EPOCH=1591635090
 
 %install
-export SOURCE_DATE_EPOCH=1591628882
+export SOURCE_DATE_EPOCH=1591635090
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
