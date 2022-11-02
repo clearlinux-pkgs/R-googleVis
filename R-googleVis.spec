@@ -4,7 +4,7 @@
 #
 Name     : R-googleVis
 Version  : 0.7.0
-Release  : 46
+Release  : 47
 URL      : https://cran.r-project.org/src/contrib/googleVis_0.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/googleVis_0.7.0.tar.gz
 Summary  : R Interface to Google Charts
